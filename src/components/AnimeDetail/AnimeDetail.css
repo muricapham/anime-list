@@ -1,0 +1,39 @@
+.title {
+  display: flex;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 22px;
+  margin-bottom: 11px;
+  margin-left: 8px;
+  gap: 1rem;
+}
+
+.background-text {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.list-group {
+  position: relative;
+  display: flex;
+  padding: 10px 15px;
+  margin-top: 10px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #d3e0e9;
+}
+
+.image-container {
+  width: 50%;
+}
+
+.text-container > * {
+  padding: 8px;
+}
+
+.trailer-section {
+  padding: 8px;
+}
