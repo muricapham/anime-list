@@ -32,29 +32,58 @@ function AnimeDetail() {
         <a href={anime?.url} target="_blank" rel="noreferrer">
           <img
             src={imgUrl}
-            height="32px"
-            width="32px"
+            height="28px"
+            width="28px"
             alt=""
             title="View at MyAnimeList.net"
           />
         </a>
       </h1>
       <div className="background-text">
-        {anime?.background || anime?.synopsis}
+        <div>{anime?.synopsis}</div>
+        <div>{anime?.background}</div>
       </div>
       <div className="list-group">
         <div className="image-container">
           <img src={anime?.images?.jpg?.image_url} alt=""></img>
         </div>
         <div className="text-container">
-          <h3>Rank: {anime?.rank}</h3>
-          <h3>Popularity: {anime?.popularity}</h3>
-          <h3>Score: {anime?.score}</h3>
-          <h3>Members: {anime?.members}</h3>
-          <h3>Source: {anime?.source}</h3>
-          <h3>Duration: {anime?.duration}</h3>
-          <h3>Status: {anime?.status}</h3>
-          <h3>Rating: {anime?.rating}</h3>
+          <div>
+            <span className="dark-text">Rank: </span>
+            <span>{anime?.rank}</span>
+          </div>
+          <div>
+            <span className="dark-text">Popularity: </span>
+            <span>{anime?.popularity}</span>
+          </div>
+          <div>
+            <span className="dark-text">Score: </span>
+            <span>{anime?.score}</span>
+          </div>
+          <div>
+            <span className="dark-text">Members: </span>
+            <span>{anime?.members}</span>
+          </div>
+          <div>
+            <span className="dark-text">Source: </span>
+            <span>{anime?.source}</span>
+          </div>
+          <div>
+            <span className="dark-text">Source: </span>
+            <span>{anime?.duration}</span>
+          </div>
+          <div>
+            <span className="dark-text">Status: </span>
+            <span>{anime?.status}</span>
+          </div>
+          <div>
+            <span className="dark-text">Status: </span>
+            <span>{anime?.status}</span>
+          </div>
+          <div>
+            <span className="dark-text">Rating: </span>
+            <span>{anime?.rating}</span>
+          </div>
         </div>
       </div>
       {anime?.trailer?.embed_url ? (
