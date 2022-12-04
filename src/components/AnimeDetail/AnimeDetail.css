@@ -4,8 +4,8 @@
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
-  margin-top: 22px;
-  margin-bottom: 11px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   margin-left: 8px;
   gap: 1rem;
 }
@@ -40,10 +40,36 @@
 }
 
 .trailer-section {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.character-section {
   padding: 8px;
+}
+
+.character {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-item {
+  flex: 1 1 10%;
+  max-width: 10;
+  padding: 16px 8px;
 }
 
 .dark-text {
   color: #444;
   font-weight: 700;
+}
+
+.back-button {
+  -moz-box-align: center;
+  align-items: center;
+  color: #000000;
+}
+
+.back-button:hover {
+  color: gray;
 }

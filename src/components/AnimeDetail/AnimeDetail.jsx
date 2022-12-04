@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Tooltip } from "@mui/material";
 import "./AnimeDetail.css";
 
 function AnimeDetail() {
   const { category } = useParams();
-
   const [anime, setAnime] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   const imgUrl = require(`../../assets/images/MAL.png`);
 
@@ -17,17 +19,29 @@ function AnimeDetail() {
     setAnime(temp.data);
   };
 
+  const fetchCharacters = async (anime) => {
+    const temp = await fetch(
+      `https://api.jikan.moe/v4/anime/${anime}/characters`
+    ).then((res) => res.json());
+
+    setCharacters(temp.data?.slice(0, 10));
+  };
+
   useEffect(() => {
     if (category) {
       fetchAnime(category);
+      fetchCharacters(category);
     }
   }, [category]);
-
-  console.log(anime);
 
   return (
     <div>
       <h1 className="title">
+        <NavLink to="/">
+          <Tooltip title="Back">
+            <ArrowBackIosIcon className="back-button" fontSize="large" />
+          </Tooltip>
+        </NavLink>
         {anime?.title_english || anime?.title_japanese}
         <a href={anime?.url} target="_blank" rel="noreferrer">
           <img
@@ -86,16 +100,40 @@ function AnimeDetail() {
           </div>
         </div>
       </div>
+      {characters?.length > 0 && (
+        <div className="character-section">
+          <h1 className="title">Characters</h1>
+          <div className="character">
+            {characters?.map((item) => {
+              return (
+                <div className="character-item">
+                  <span>{item.character.name}</span>
+                  <div>
+                    <img
+                      width="150"
+                      height="200"
+                      src={item.character.images.jpg.image_url}
+                      alt=""
+                    ></img>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
       {anime?.trailer?.embed_url ? (
         <div className="trailer-section">
           <h1 className="title">Trailer</h1>
-          <iframe
-            id="inlineFrameExample"
-            title="Inline Frame Example"
-            width="600"
-            height="400"
-            src={anime?.trailer?.embed_url}
-          ></iframe>
+          <div align="center">
+            <iframe
+              id="inlineFrameExample"
+              title="Inline Frame Example"
+              width="1000"
+              height="500"
+              src={anime?.trailer?.embed_url}
+            ></iframe>
+          </div>
         </div>
       ) : (
         <></>
