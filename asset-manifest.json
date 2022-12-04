@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/anime-list/static/css/main.383724a4.css",
-    "main.js": "/anime-list/static/js/main.312c4ac0.js",
+    "main.css": "/anime-list/static/css/main.70cb700b.css",
+    "main.js": "/anime-list/static/js/main.faec8512.js",
     "static/js/787.6215af9f.chunk.js": "/anime-list/static/js/787.6215af9f.chunk.js",
+    "static/media/logo-github.svg": "/anime-list/static/media/logo-github.b9c7d26c2e9748688e6dccefb079bea6.svg",
+    "static/media/logo-linkedin.svg": "/anime-list/static/media/logo-linkedin.1158112b877e2699d91cd4386e141728.svg",
     "index.html": "/anime-list/index.html",
-    "main.383724a4.css.map": "/anime-list/static/css/main.383724a4.css.map",
-    "main.312c4ac0.js.map": "/anime-list/static/js/main.312c4ac0.js.map",
+    "main.70cb700b.css.map": "/anime-list/static/css/main.70cb700b.css.map",
+    "main.faec8512.js.map": "/anime-list/static/js/main.faec8512.js.map",
     "787.6215af9f.chunk.js.map": "/anime-list/static/js/787.6215af9f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.383724a4.css",
-    "static/js/main.312c4ac0.js"
+    "static/css/main.70cb700b.css",
+    "static/js/main.faec8512.js"
   ]
 }
