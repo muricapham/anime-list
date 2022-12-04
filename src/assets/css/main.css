@@ -80,6 +80,7 @@ header h1 strong {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 0%;
   flex: 1 1 0%;
+  gap: 1rem;
 }
 .content-wrap main .main-head .search-box input {
   -webkit-appearance: none;
@@ -159,3 +160,13 @@ header h1 strong {
   transform: scale(1.05);
 }
 /*# sourceMappingURL=main.css.map */
+
+.filter-anime {
+  background-color: #313131 !important;
+}
+
+.social-media {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}

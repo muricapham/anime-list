@@ -28,13 +28,24 @@ function Home() {
     setPopularAnime(temp.data?.slice(0, 5));
   };
 
+  const getFilteredAnime = async (value) => {
+    const temp = await fetch(
+      `https://api.jikan.moe/v4/top/anime?filter=${value}`
+    ).then((res) => res.json());
+
+    setAnimeList(temp.data);
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     fetchAnime(search);
   };
 
+  const handleFilter = (value) => {
+    getFilteredAnime(value);
+  };
+
   const fetchAnime = async (query) => {
-    // could change app to add filters for these params
     const temp = await fetch(
       `https://api.jikan.moe/v4/anime?q=${query}&order_by=popularity&sort=asc&sfw`
     ).then((res) => res.json());
@@ -54,6 +65,7 @@ function Home() {
         <Sidebar topAnime={topAnime} popularAnime={popularAnime} />
         <MainContent
           handleSearch={handleSearch}
+          handleFilter={handleFilter}
           search={search}
           setSearch={setSearch}
           animeList={animeList}
