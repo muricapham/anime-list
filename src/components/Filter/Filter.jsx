@@ -1,16 +1,17 @@
 import React from "react";
 import "./Filter.css";
 
-const Filter = ({ fetchFilter, name, handleClose }) => {
+const Filter = ({ fetchFilter, filter, handleClose }) => {
   return (
     <button
       className="filter-button"
       onClick={() => {
         handleClose();
-        fetchFilter(`${name}`);
+        fetchFilter(`${filter.name}`);
       }}
     >
-      {name}
+      {filter.icon}
+      {filter.name}
     </button>
   );
 };

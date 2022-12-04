@@ -56,7 +56,7 @@
 .character-item {
   flex: 1 1 10%;
   max-width: 10;
-  padding: 16px 8px;
+  padding: 2px 2px;
 }
 
 .dark-text {

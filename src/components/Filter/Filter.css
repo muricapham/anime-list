@@ -11,12 +11,13 @@
   font-weight: 400;
   text-transform: capitalize;
   color: #fff;
-  background-color: #aaa;
+  background-color: #eee;
   color: black;
 }
 
 .filter-button:hover {
   cursor: pointer;
+  background-color: #aaa;
 }
 
 .MuiMenu-list {
