@@ -24,7 +24,10 @@ function AnimeDetail() {
       `https://api.jikan.moe/v4/anime/${anime}/characters`
     ).then((res) => res.json());
 
-    setCharacters(temp.data?.slice(0, 10));
+    let sortedData = temp?.data.sort((a, b) =>
+      a.favorites < b.favorites ? 1 : -1
+    );
+    setCharacters(sortedData?.slice(0, 10));
   };
 
   useEffect(() => {
